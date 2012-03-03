@@ -10,8 +10,9 @@
 @property (nonatomic, retain) WebView *webView;
 
 - (id) initWithWebView:(WebView *)view;
-- (void) open:(NSDictionary *)properties;
+- (id) open:(NSDictionary *)properties;
 - (void) move:(NSDictionary *)properties;
 - (void) resize:(NSDictionary *) properties;
+- (NSString*) url;
 
 @end

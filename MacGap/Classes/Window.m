@@ -12,15 +12,27 @@
     return self;
 }
 
-- (void) open:(NSDictionary *)properties
+- (id) open:(NSDictionary *)properties
 {
     double width  = [[properties valueForKey:@"width"] doubleValue];
     double height =  [[properties valueForKey:@"height"] doubleValue];
     
-    NSRect frame = NSMakeRect(0, 0, width, height);
+    NSSize size = [[NSScreen mainScreen] frame].size;
+    
+    CGFloat x = (size.width - width) / 2;
+    CGFloat y = (size.height - width) /2;
+    NSLog(@"x: %f, y: %f", x, y);
+    NSRect frame = NSMakeRect(x, y, width, height);
+    
     self.windowController = [[WindowController alloc] initWithURL:[properties valueForKey:@"url"] andFrame:frame];
     [self.windowController showWindow: [NSApplication sharedApplication].delegate];
     [self.windowController.window makeKeyWindow];
+    return self;
+}
+
+- (NSString*) url
+{
+    return [self.windowController.contentView.webView mainFrameURL];
 }
 
 - (void) move:(NSDictionary *)properties
