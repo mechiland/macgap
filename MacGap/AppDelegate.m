@@ -43,6 +43,7 @@
     self.windowController.contentView.alphaValue = 1.0;
     
     [self.windowController showWindow:self];
+    
     NSSize minSize = NSMakeSize(320, 500);
     NSSize maxSize = NSMakeSize(800, 700);
     [self.windowController.window setMinSize:minSize];
