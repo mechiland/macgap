@@ -14,7 +14,6 @@
 
 - (void) applicationWillFinishLaunching:(NSNotification *)aNotification
 {
-
     
 }
 
@@ -29,7 +28,7 @@
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification { 
     NSSize size = [[NSScreen mainScreen] frame].size;
 
-    CGFloat width = 350;
+    CGFloat width = 400;
     CGFloat height = 600;
     
     CGFloat x = (size.width - width) / 2;
@@ -44,8 +43,8 @@
     
     [self.windowController showWindow:self];
     
-    NSSize minSize = NSMakeSize(320, 500);
-    NSSize maxSize = NSMakeSize(800, 700);
+    NSSize minSize = NSMakeSize(400, 500);
+    NSSize maxSize = NSMakeSize(900, 1000);
     [self.windowController.window setMinSize:minSize];
     [self.windowController.window setMaxSize:maxSize];
 }
