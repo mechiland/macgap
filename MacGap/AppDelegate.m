@@ -44,7 +44,7 @@
     [self.windowController showWindow:self];
     
     NSSize minSize = NSMakeSize(400, 500);
-    NSSize maxSize = NSMakeSize(900, 1000);
+    NSSize maxSize = NSMakeSize(900, 2000);
     [self.windowController.window setMinSize:minSize];
     [self.windowController.window setMaxSize:maxSize];
 }
