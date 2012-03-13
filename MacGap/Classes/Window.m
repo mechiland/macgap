@@ -31,7 +31,6 @@
 
 - (void) close
 {
-    NSLog(@"Closing the window");
     [self.windowController close];
 }
 
