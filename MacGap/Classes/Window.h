@@ -14,5 +14,6 @@
 - (void) move:(NSDictionary *)properties;
 - (void) resize:(NSDictionary *) properties;
 - (NSString*) url;
+- (void) close;
 
 @end

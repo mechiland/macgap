@@ -21,13 +21,18 @@
     
     CGFloat x = (size.width - width) / 2;
     CGFloat y = (size.height - width) /2;
-    NSLog(@"x: %f, y: %f", x, y);
     NSRect frame = NSMakeRect(x, y, width, height);
     
     self.windowController = [[WindowController alloc] initWithURL:[properties valueForKey:@"url"] andFrame:frame];
     [self.windowController showWindow: [NSApplication sharedApplication].delegate];
     [self.windowController.window makeKeyWindow];
     return self;
+}
+
+- (void) close
+{
+    NSLog(@"Closing the window");
+    [self.windowController close];
 }
 
 - (NSString*) url
